@@ -63,7 +63,7 @@ public partial class NpcTest : AnimatedEntity
 			}
 			else
 			{
-				Steer = null;
+				//Steer = null;
 			}
 
 
@@ -133,7 +133,6 @@ public partial class NpcTest : AnimatedEntity
 					move.Velocity = move.Velocity - movement * InputVelocity.Normal;
 					move.ApplyFriction( tr.Surface.Friction * 10.0f, timeDelta );
 					move.Velocity += movement * InputVelocity.Normal;
-
 				}
 				else
 				{
@@ -148,7 +147,14 @@ public partial class NpcTest : AnimatedEntity
 			}
 		}
 
-		Position = move.Position;
+		Rotation *= Rotation.FromYaw( (RootMotionAngle * Time.Delta) );
+		Position += (Rotation * RootMotion) * Time.Delta;
+		Position = Position.WithZ( move.Position.z );
 		Velocity = move.Velocity;
+	}
+
+	public void SetExample( int i )
+	{
+		SetAnimParameter( "Active Example", i );
 	}
 }

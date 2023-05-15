@@ -14,10 +14,13 @@ public struct CustomHelper
 	public void WithLookAt( Vector3 look )
 	{
 		var eyepos = Owner.Position + Vector3.Up * 64;
-		Owner.SetAnimLookAt( "aim_eyes", eyepos, look );
-		Owner.SetAnimLookAt( "aim_head", eyepos, look );
-		Owner.SetAnimLookAt( "aim_body", eyepos, look );
-		Owner.SetAnimParameter( "aimat_weight", 0.5f );
+		Owner.SetAnimLookAt( "Look Heading", eyepos, look );
+		//Owner.SetAnimLookAt( "Look Target", eyepos, look );
+		Owner.SetAnimLookAt( "Look at Target", eyepos, look );
+		//Owner.SetAnimLookAt( "aim_head", eyepos, look );
+		//Owner.SetAnimLookAt( "aim_body", eyepos, look );
+		Owner.SetAnimParameter( "Look Heading", look.Angle( Owner.Velocity ) );
+		//Owner.SetAnimParameter( "Look at Target", eyepos + look );
 	}
 
 	public void WithVelocity( Vector3 Velocity )
@@ -52,7 +55,9 @@ public struct CustomHelper
 
 	public void WithNavStatus( NavSteer steer )
 	{
-		Owner.SetAnimParameter( "HasAPath", steer != null && !steer.Output.Finished );
+		bool hasPath = steer != null && !steer.Output.Finished && (steer.Target.Distance( Owner.Position ) > 10);
+		Owner.SetAnimParameter( "HasAPath", hasPath );
+		Owner.SetAnimParameter( "Has a Path", hasPath );
 	}
 }
 

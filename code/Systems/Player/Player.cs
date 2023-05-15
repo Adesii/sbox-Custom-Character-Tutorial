@@ -101,6 +101,8 @@ public partial class Player : AnimatedEntity
 		PlayerCamera = new PlayerCamera();
 	}
 
+	public int CurrentExample { get; set; } = 0;
+
 	/// <summary>
 	/// Called every server and client tick.
 	/// </summary>
@@ -111,6 +113,22 @@ public partial class Player : AnimatedEntity
 
 		Controller?.Simulate( cl );
 		Animator?.Simulate( cl );
+
+		DebugOverlay.ScreenText( $"Use 1-6 to change example. Current: {CurrentExample + 1}", 10 );
+		for ( int i = 0; i < 6; i++ )
+		{
+			if ( Input.Pressed( $"Slot{i + 1}" ) )
+			{
+				CurrentExample = i;
+
+				foreach ( var item in All.OfType<NpcTest>() )
+				{
+					item.SetExample( i );
+
+				}
+				break;
+			}
+		}
 
 		if ( Input.Pressed( "attack1" ) && Game.IsServer )
 		{

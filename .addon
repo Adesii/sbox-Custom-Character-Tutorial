@@ -18,7 +18,7 @@
     "GameNetworkType": "Multiplayer",
     "MapSelect": "Unrestricted",
     "MapList": [
-      "custom_character"
+      "character_showcase"
     ],
     "RankType": "None",
     "PerMapRanking": false,
