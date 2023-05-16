@@ -29,6 +29,8 @@ public partial class NpcTest : AnimatedEntity
 		SetMaterialGroup( Game.Random.Int( 0, 3 ) );
 		SetBodyGroup( 1, 0 );
 
+		Tags.Add( "npc" );
+
 		EnableHitboxes = true;
 		Speed = Game.Random.Float( 100, 300 );
 	}

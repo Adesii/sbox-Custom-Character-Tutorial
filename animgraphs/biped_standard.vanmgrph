@@ -812,7 +812,7 @@
 				{
 					_class = "CStateMachineAnimNode"
 					m_sName = "Movement"
-					m_vecPosition = [ -534.0, 6801.0 ]
+					m_vecPosition = [ -544.0, 6800.0 ]
 					m_nNodeID = 
 					{
 						m_id = 236076305
@@ -5284,7 +5284,7 @@
 				{
 					_class = "CFollowPathAnimNode"
 					m_sName = "Follow Path - Face Path"
-					m_vecPosition = [ -1509.0, 5213.0 ]
+					m_vecPosition = [ -1520.0, 5200.0 ]
 					m_nNodeID = 
 					{
 						m_id = 858788794
@@ -7790,7 +7790,7 @@
 							{
 								m_id = 1325707929
 							}
-							m_position = [ -355.0, -42.0 ]
+							m_position = [ -368.0, -48.0 ]
 							m_bIsStartState = true
 							m_bIsEndtState = false
 							m_bIsPassthrough = false
@@ -7857,7 +7857,7 @@
 							{
 								m_id = 25397490
 							}
-							m_position = [ 19.0, -40.0 ]
+							m_position = [ 16.0, -48.0 ]
 							m_bIsStartState = false
 							m_bIsEndtState = false
 							m_bIsPassthrough = false
@@ -9972,13 +9972,17 @@
 									m_conditions = 
 									[
 										{
-											_class = "CTagCondition"
+											_class = "CParameterAnimCondition"
 											m_comparisonOp = 0
-											m_tagID = 
+											m_paramID = 
 											{
-												m_id = 932982067
+												m_id = 1842375748
 											}
-											m_comparisonValue = true
+											m_comparisonValue = 
+											{
+												m_nType = 1
+												m_data = true
+											}
 										},
 									]
 									m_blendDuration = 0.6
@@ -10035,13 +10039,17 @@
 									m_conditions = 
 									[
 										{
-											_class = "CTagCondition"
+											_class = "CParameterAnimCondition"
 											m_comparisonOp = 0
-											m_tagID = 
+											m_paramID = 
 											{
-												m_id = 932982067
+												m_id = 1842375748
 											}
-											m_comparisonValue = false
+											m_comparisonValue = 
+											{
+												m_nType = 1
+												m_data = false
+											}
 										},
 									]
 									m_blendDuration = 0.6
@@ -12347,7 +12355,7 @@
 				{
 					_class = "CStateMachineAnimNode"
 					m_sName = "Unnamed"
-					m_vecPosition = [ 279.0, 2558.0 ]
+					m_vecPosition = [ 272.0, 2544.0 ]
 					m_nNodeID = 
 					{
 						m_id = 1736370137
@@ -12365,13 +12373,17 @@
 									m_conditions = 
 									[
 										{
-											_class = "CTagCondition"
+											_class = "CParameterAnimCondition"
 											m_comparisonOp = 0
-											m_tagID = 
+											m_paramID = 
 											{
-												m_id = 932982067
+												m_id = 1842375748
 											}
-											m_comparisonValue = true
+											m_comparisonValue = 
+											{
+												m_nType = 1
+												m_data = true
+											}
 										},
 									]
 									m_blendDuration = 0.6
@@ -12428,13 +12440,17 @@
 									m_conditions = 
 									[
 										{
-											_class = "CTagCondition"
+											_class = "CParameterAnimCondition"
 											m_comparisonOp = 0
-											m_tagID = 
+											m_paramID = 
 											{
-												m_id = 932982067
+												m_id = 1842375748
 											}
-											m_comparisonValue = false
+											m_comparisonValue = 
+											{
+												m_nType = 1
+												m_data = false
+											}
 										},
 									]
 									m_blendDuration = 0.6
@@ -14832,6 +14848,20 @@
 				m_bPredicted = false
 				m_defaultValue = [ 0.0, 0.0, 0.0 ]
 				m_bInterpolate = false
+			},
+			{
+				_class = "CBoolAnimParameter"
+				m_name = "LookAtLocked"
+				m_id = 
+				{
+					m_id = 1842375748
+				}
+				m_previewButton = "ANIMPARAM_BUTTON_NONE"
+				m_bNetwork = true
+				m_bUseMostRecentValue = false
+				m_bAutoReset = false
+				m_bPredicted = false
+				m_bDefaultValue = false
 			},
 		]
 	}
